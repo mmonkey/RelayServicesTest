@@ -10,8 +10,8 @@ import org.spongepowered.api.util.command.CommandResult;
 import org.spongepowered.api.util.command.CommandSource;
 import org.spongepowered.api.util.command.args.CommandContext;
 
-import com.github.mmonkey.Relay.MessageRelayResult;
-import com.github.mmonkey.Relay.RelayService;
+import com.github.mmonkey.Relay.Services.MessageRelayResult;
+import com.github.mmonkey.Relay.Services.RelayService;
 
 public class TestRelaySubcommand extends TestCommand {
 
