@@ -22,7 +22,7 @@ public class RelayServiceTest {
 	
 	public static final String ID = "RelayServiceTest";
 	public static final String NAME = "RelayServiceTest";
-	public static final String VERSION = "0.0.1";
+	public static final String VERSION = "1.0.2-2.1";
 	
 	private Game game;
 	private Optional<PluginContainer> pluginContainer;
@@ -60,10 +60,10 @@ public class RelayServiceTest {
 		 * /test relay
 		 */
 		subcommands.put(Arrays.asList("relay"), CommandSpec.builder()
-			.setDescription(Texts.of("Test RelayService"))
-			.setExtendedDescription(Texts.of("You must have an activated contact to use this."))
-			.setExecutor(new TestRelaySubcommand(this))
-			.setArguments(
+			.description(Texts.of("Test RelayService"))
+			.extendedDescription(Texts.of("You must have an activated contact to use this."))
+			.executor(new TestRelaySubcommand(this))
+			.arguments(
 				GenericArguments.flags()
 					.valueFlag(GenericArguments.string(Texts.of("player")), "p")
 					.buildWith(GenericArguments.remainingJoinedStrings(Texts.of("message"))))
@@ -73,10 +73,10 @@ public class RelayServiceTest {
 		 * /test
 		 */
 		CommandSpec testCommand = CommandSpec.builder()
-			.setDescription(Texts.of("Test Relay Services"))
-			.setExtendedDescription(Texts.of("Test RelayService and TemplatingService"))
-			.setExecutor(new TestCommand(this))
-			.setChildren(subcommands)
+			.description(Texts.of("Test Relay Services"))
+			.extendedDescription(Texts.of("Test RelayService and TemplatingService"))
+			.executor(new TestCommand(this))
+			.children(subcommands)
 			.build();
 		
 		this.game.getCommandDispatcher().register(this, testCommand, "test");
